@@ -46,11 +46,11 @@ lengthpublic = len(d["PublicTest"])
 
 ### Files for downloading
 
-Organized datasets and two json files could be downloaded here:
+Organized datasets and two json files could be downloaded here(info.zip):
 
 url:https://pan.baidu.com/s/1adg0JLiMkDb7YMLZe71yJQ
 
 password:dfig
 
-or connect us: miaosi2018@sari.ac.cn,  2904661326@qq.com,  miaosi@hust.edu.cn
+or connect us: miaosi2018@sari.ac.cn,  2904661326@qq.com,  miaosi@hust.edu.cn（miaosi2018@sari.ac.cn is recommended).
 

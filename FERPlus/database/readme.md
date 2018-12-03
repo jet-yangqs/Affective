@@ -1,0 +1,1 @@
+This directory should include three subfolds:Training,PublicTest,PrivateTest

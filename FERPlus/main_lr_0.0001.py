@@ -169,7 +169,7 @@ def do_task(maxoverflow, task, clearcursor=True, epochno=0):
 
 
 print("Data loading")
-with open("info_MV.json") as f:
+with open("info_DIS.json") as f:
     d = json.load(f)
 shuffle()
 lengthpublic = len(d["PublicTest"])

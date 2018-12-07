@@ -30,11 +30,7 @@ python3 main_lr_0.001.py(initial learning rate=0.001)
 
 Training tricks:
 
-<<<<<<< HEAD
 Firstly,train with info_DIS.json(use probability distribution tags),**after it nearly converges**,use info_MV.json to reach the summit.Although probability distribution tags describe the affection better than major voting(one hot),if you use probability tags only,the loss function will never reach bottom.
-=======
-Firstly,train with info_DIS.json(use probability distribution tags),after it nearly converges,use info_MV.json to reach the summit.Although probability distribution tags describe the affection better than major voting(one hot),if you use probability tags only,the loss function will never reach bottom.
->>>>>>> 26cc083c3ff328b3696f23df43233d788721e14f
 
 Please revise here:
 
@@ -52,14 +48,11 @@ lengthpublic = len(d["PublicTest"])
 
 Organized datasets and two json files could be downloaded here(info.zip):
 
-<<<<<<< HEAD
 url: https://pan.baidu.com/s/1adg0JLiMkDb7YMLZe71yJQ
 
 password: dfig
 
 or connect us: miaosi2018@sari.ac.cn,  2904661326@qq.com,  miaosi@hust.edu.cn（miaosi2018@sari.ac.cn is recommended).
-
-
 
 
 
@@ -71,11 +64,4 @@ Step1: Download "Cropped" from Xiaolan Fu's website. If you want our original pr
 
 Step2:run python3 call.py. It would run LOSO 26 times.
 
-=======
-url:https://pan.baidu.com/s/1adg0JLiMkDb7YMLZe71yJQ
 
-password:dfig
-
-or connect us: miaosi2018@sari.ac.cn,  2904661326@qq.com,  miaosi@hust.edu.cn（miaosi2018@sari.ac.cn is recommended).
-
->>>>>>> 26cc083c3ff328b3696f23df43233d788721e14f

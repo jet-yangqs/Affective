@@ -30,7 +30,7 @@ middle1=2048
 middle2=1024
 filters = [44,44,88]
 eye = np.eye(5)
-with open('info2.json') as f:
+with open('info_CASME2.json') as f:
     d = json.load(f)
 keys = list(d.keys())
 random.shuffle(keys)

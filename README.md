@@ -62,6 +62,8 @@ or connect us: miaosi2018@sari.ac.cn,  2904661326@qq.com,  miaosi@hust.edu.cn（
 
 Step1: Download "Cropped" from Xiaolan Fu's website. If you want our original preprocessed optical flow, please send a cc that Xiaolan Fu has agreed your application for CASME2. The CASME2-coding-20140508.csv file and the "Cropped" directory are intentionally left blank due to the license.
 
-Step2:run python3 call.py. It would run LOSO 26 times.
+Step2:run python3 calcflow.py to generate optical flow and info_CASME2.json(It is about some information on the optical flow images).
+
+Step3:run python3 call.py. It would run LOSO 26 times.
 
 

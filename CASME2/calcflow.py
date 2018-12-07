@@ -79,7 +79,6 @@ for file in files:
             newimage[np.where(newimage < threshold1)] = 0
             newimage = newimage[edge:size-edge, edge:size-edge]
             cv2.imwrite('%s/frame%s.bmp' % (t, cnt), newimage)
-            next = prvs
             sum = np.sum(np.square(newimage))
             if sum > max_amplitude:
                 max_amplitude = sum

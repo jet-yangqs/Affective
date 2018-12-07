@@ -30,7 +30,7 @@ python3 main_lr_0.001.py(initial learning rate=0.001)
 
 Training tricks:
 
-Firstly,train with info_DIS.json(use probability distribution tags),after it nearly converges,use info_MV.json to reach the summit.Although probability distribution tags describe the affection better than major voting(one hot),if you use probability tags only,the loss function will never reach bottom.
+Firstly,train with info_DIS.json(use probability distribution tags),**after it nearly converges**,use info_MV.json to reach the summit.Although probability distribution tags describe the affection better than major voting(one hot),if you use probability tags only,the loss function will never reach bottom.
 
 Please revise here:
 
@@ -46,11 +46,23 @@ lengthpublic = len(d["PublicTest"])
 
 ### Files for downloading
 
-Organized datasets and two json files could be downloaded here:
+Organized datasets and two json files could be downloaded here(info.zip):
 
-url:https://pan.baidu.com/s/1adg0JLiMkDb7YMLZe71yJQ
+url: https://pan.baidu.com/s/1adg0JLiMkDb7YMLZe71yJQ
 
-password:dfig
+password: dfig
 
-or connect us: miaosi2018@sari.ac.cn,  2904661326@qq.com,  miaosi@hust.edu.cn
+or connect us: miaosi2018@sari.ac.cn,  2904661326@qq.com,  miaosi@hust.edu.cn（miaosi2018@sari.ac.cn is recommended).
+
+
+
+
+
+## CASME2
+
+### How to run?
+
+Step1: Download "Cropped" from Xiaolan Fu's website. If you want our original preprocessed optical flow, please send a cc that Xiaolan Fu has agreed your application for CASME2. The CASME2-coding-20140508.csv file and the "Cropped" directory are intentionally left blank due to the license.
+
+Step2:run python3 call.py. It would run LOSO 26 times.
 

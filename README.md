@@ -4,13 +4,13 @@
 
 ### How to run
 
-To run FERPlus,follow several steps:
+To run FERPlus, follow several steps:
 
-Step 1:cd into FERPlus directory
+Step 1: cd into FERPlus directory
 
-Step 2:generate 2 json files
+Step 2: generate 2 json files
 
-```shell
+```run following commands:
 python3 get_json_DIS.py # generate info_DIS.json
 python3 get_json_MV.py #generate info_MV.json
 ```

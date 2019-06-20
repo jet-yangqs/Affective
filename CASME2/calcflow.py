@@ -23,16 +23,21 @@ def readcsv(file='CASME2-coding-20140508.csv'):
 
 
 info = readcsv()
+print(info.keys())
 dir = 'Cropped'
 files = os.listdir(dir)
-threshold1 = 80  #20-100, that really does not matter.
+threshold1 = 10
 threshold2 = 5
 size = 120
 edge = 4
+cope = False
 info2 = dict()
 for file in files:
     layer2 = dir + '/' + file
-    files2 = os.listdir(layer2)
+    try:
+       files2 = os.listdir(layer2)
+    except:
+       continue
     print(files2)
     for file2 in files2:
         layer3 = layer2 + '/' + file2
@@ -58,7 +63,7 @@ for file in files:
         cnt += 1
         name = layer3.replace('Cropped/', '')
         if name not in info.keys():
-            print('%s not in info.keys()!')
+            print('%s not in info.keys()!'%name)
             continue
         max_amplitude = 0.0
         A = dict()
@@ -71,21 +76,29 @@ for file in files:
             mag, ang = cv2.cartToPolar(flow[..., 0], flow[..., 1])
             hsv[..., 0] = ang * 180 / np.pi / 2
             hsv[..., 2] = cv2.normalize(mag, None, 0, 255, cv2.NORM_MINMAX)
-            bgr = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
+            hsvnew = deepcopy(hsv)
+            if cope:
+               hsvnew[..., 0] = hsvnew[..., 0] = np.maximum(hsvnew[..., 0] - np.mean(hsv[..., 0]), 0)
+               hsvnew[..., 2] = hsvnew[..., 2] = np.maximum(hsvnew[..., 2] - np.mean(hsv[...,  2]), 0)
+            bgr = cv2.cvtColor(hsvnew, cv2.COLOR_HSV2BGR)
             newimage = deepcopy(bgr)
+            '''
             newimage[:, :, 0] = np.maximum(bgr[:, :, 0] - np.mean(bgr[:, :, 0]), 0)
             newimage[:, :, 1] = np.maximum(bgr[:, :, 1] - np.mean(bgr[:, :, 1]), 0)
             newimage[:, :, 2] = np.maximum(bgr[:, :, 2] - np.mean(bgr[:, :, 2]), 0)
-            newimage[np.where(newimage < threshold1)] = 0
+            '''
+            if cope:
+                newimage[np.where(newimage < threshold1)] = 0
             newimage = newimage[edge:size-edge, edge:size-edge]
             cv2.imwrite('%s/frame%s.bmp' % (t, cnt), newimage)
+            next = prvs
             sum = np.sum(np.square(newimage))
             if sum > max_amplitude:
                 max_amplitude = sum
             A['%s/frame%s.bmp' % (t, cnt)] = sum
             cnt += 1
         for key in A.keys():
-            if A[key] > 1e-7 and max_amplitude/A[key] < threshold2:
+            if (A[key] > 1e-7 and max_amplitude/A[key] < threshold2) or not cope:
                 info2[key] = info[name]
                 print('record %s,sum=%s' % (key, A[key]))
 

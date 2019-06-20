@@ -4,7 +4,7 @@
 
 ### How to run
 
-To run FERPlus, follow several steps:
+To run FERPlus, please follow several steps:
 
 Step 1: cd into FERPlus directory
 
